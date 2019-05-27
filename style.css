@@ -18,7 +18,7 @@
 }
 
 .body{
-    background-color: rgb(88,88,88)
+  background-color: rgb(88,88,88)
 }
 
 .middle {
@@ -39,8 +39,10 @@
   .list-group-item:hover .middle {
     opacity: 1;
   }
+
+  
   .text {
-    background-color: #4CAF50;
+    background-color: rgb(150, 144, 144);
     color: white;
     font-size: 16px;
     padding: 16px 32px;
