@@ -11,7 +11,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$limit = 5;  
+$limit = 3;  
 if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };  
 $start_from = ($page-1) * $limit;   
 
@@ -34,6 +34,10 @@ $start_from = ($page-1) * $limit;
 
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fontowsome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
@@ -103,7 +107,7 @@ $start_from = ($page-1) * $limit;
       <div class="row" id="list_movies">
 	  
 <?php
-$sql = "SELECT genre.name as genre_name, movies_list.name, movies_list.image_name,movies_list.id FROM movies_list join genre on movies_list.genre = genre.id LIMIT $start_from, $limit";
+$sql = "SELECT genre.name as genre_name, movies_list.name, movies_list.image_name,movies_list.id  , movie_details.description ,movie_details.duration, movie_details.release_date, movie_details.likes  FROM movies_list join genre on movies_list.genre = genre.id join movie_details on movies_list.id = movie_details.movie_id  LIMIT $start_from, $limit";
 $result = mysqli_query($conn, $sql);
 /* echo '<pre>';
 print_r(mysqli_fetch_assoc($result));
@@ -122,13 +126,19 @@ if (mysqli_num_rows($result) > 0) {
 		  <div class="panel-heading title"><center><b><?php echo $row["name"]; ?> </b></center></div>
 		  <ul class="list-group">
         
-            <li class="list-group-item"><center><b><img class="img-rounded img-responsive" src ="<?php echo $row["image_name"]; ?>"></b></center> 
+            <li class="list-group-item"><center><b><img class="img-rounded img-responsive" src ="<?php echo $row["image_name"]; ?>">
+          
             <div class="middle">
-            <div class="text"><?php echo $row["name"];  ?>
+            <div class="text">length=<?php echo $row["duration"];  ?>
+            <div class="text">likes=<?php echo $row["likes"];  ?>
+            <div class="text">released=<?php echo $row["release_date"];  ?>
+
 
           </div>
          
             </div>
+          </b></center>
+            
             </li>
           
 			<li class="list-group-item"><center><b><?php echo $row["genre_name"]; ?> </b></center> </li>

@@ -11,18 +11,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-
--- Dumping database structure for movies
-CREATE DATABASE IF NOT EXISTS `movies` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `movies`;
-
--- Dumping structure for table movies.genre
-CREATE TABLE IF NOT EXISTS `genre` (
-  `id` int(110) NOT NULL AUTO_INCREMENT,
-  `name` varchar(110) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
 -- Dumping data for table movies.genre: ~4 rows (approximately)
 /*!40000 ALTER TABLE `genre` DISABLE KEYS */;
 INSERT INTO `genre` (`id`, `name`) VALUES
@@ -31,15 +19,6 @@ INSERT INTO `genre` (`id`, `name`) VALUES
 	(3, 'Horror'),
 	(4, 'Thriller');
 /*!40000 ALTER TABLE `genre` ENABLE KEYS */;
-
--- Dumping structure for table movies.movies_list
-CREATE TABLE IF NOT EXISTS `movies_list` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(110) NOT NULL,
-  `genre` varchar(110) NOT NULL,
-  `image_name` varchar(110) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table movies.movies_list: ~5 rows (approximately)
 /*!40000 ALTER TABLE `movies_list` DISABLE KEYS */;
@@ -50,17 +29,6 @@ INSERT INTO `movies_list` (`id`, `name`, `genre`, `image_name`) VALUES
 	(4, ' The Godfather (1972)', '3', 'https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg'),
 	(5, 'Pirates of the Caribbean: The Curse of the Black Pearl (2003)', '4', 'https://upload.wikimedia.org/wikipedia/en/8/89/Pirates_of_the_Caribbean_-_The_Curse_of_the_Black_Pearl.png');
 /*!40000 ALTER TABLE `movies_list` ENABLE KEYS */;
-
--- Dumping structure for table movies.movie_details
-CREATE TABLE IF NOT EXISTS `movie_details` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `movie_id` int(11) NOT NULL,
-  `description` longtext,
-  `release_date` date DEFAULT NULL,
-  `likes` int(110) DEFAULT NULL,
-  `duration` time DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table movies.movie_details: ~5 rows (approximately)
 /*!40000 ALTER TABLE `movie_details` DISABLE KEYS */;
