@@ -22,6 +22,7 @@
 
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
+<<<<<<< HEAD
  
 
  
@@ -48,6 +49,8 @@ CREATE TABLE IF NOT EXISTS `genre` (
 
  
 
+=======
+>>>>>>> 862b097ccb2a13480ea936a2c23694f9c471e4c8
 -- Dumping data for table movies.genre: ~4 rows (approximately)
 
 /*!40000 ALTER TABLE `genre` DISABLE KEYS */;
@@ -64,6 +67,7 @@ INSERT INTO `genre` (`id`, `name`) VALUES
 
 /*!40000 ALTER TABLE `genre` ENABLE KEYS */;
 
+<<<<<<< HEAD
  
 
 -- Dumping structure for table movies.movies_list
@@ -84,6 +88,8 @@ CREATE TABLE IF NOT EXISTS `movies_list` (
 
  
 
+=======
+>>>>>>> 862b097ccb2a13480ea936a2c23694f9c471e4c8
 -- Dumping data for table movies.movies_list: ~5 rows (approximately)
 
 /*!40000 ALTER TABLE `movies_list` DISABLE KEYS */;
@@ -102,6 +108,7 @@ INSERT INTO `movies_list` (`id`, `name`, `genre`, `image_name`) VALUES
 
 /*!40000 ALTER TABLE `movies_list` ENABLE KEYS */;
 
+<<<<<<< HEAD
  
 
 -- Dumping structure for table movies.movie_details
@@ -126,6 +133,8 @@ CREATE TABLE IF NOT EXISTS `movie_details` (
 
  
 
+=======
+>>>>>>> 862b097ccb2a13480ea936a2c23694f9c471e4c8
 -- Dumping data for table movies.movie_details: ~5 rows (approximately)
 
 /*!40000 ALTER TABLE `movie_details` DISABLE KEYS */;
